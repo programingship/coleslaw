@@ -7,21 +7,27 @@
 (in-package :coleslaw-disqus)
 
 (defvar *disqus-header*
-  "<div id=\"disqus_thread\"></div>
-     <script type=\"text/javascript\">
-       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  "<script type=\"text/javascript\">
+   var disqus = {
+   load : function disqus(){
        var disqus_shortname = '~a';
-       /* * * DON'T EDIT BELOW THIS LINE * * */
-       (function() {
-         var dsq = document.createElement('script');
-         dsq.type = 'text/javascript';
-         dsq.async = true;
-         dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-           })();
-     </script>
-     <noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\">comments powered by Disqus.</a></noscript>
-     <a href=\"https://disqus.com\" class=\"dsq-brlink\">comments powered by <span class=\"logo-disqus\">Disqus</span></a>")
+       if(typeof DISQUS !== 'object') {
+         (function () {
+         var s = document.createElement('script'); s.async = true;
+         s.type = 'text/javascript';
+         s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+         }());
+         $('#load-disqus').remove();
+       }
+       return true;
+   }
+   }
+</script>
+<a href=\"#disqus_thread\" onclick=\"return disqus.load();\">
+Load Disqus
+</a>
+<div id=\"disqus_thread\"></div>")
 
 (defun enable (&key shortname)
   (flet ((inject-p (x)
