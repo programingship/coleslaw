@@ -18,13 +18,13 @@
          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
          }());
-         $('#load-disqus').remove();
+	 document.getElementById('load-disqus').remove();
        }
        return true;
    }
    }
 </script>
-<a href=\"#disqus_thread\" onclick=\"return disqus.load();\">
+<a href=\"#disqus_thread\" onclick=\"return disqus.load();\" id=\"load-disqus\">
 Load Disqus
 </a>
 <div id=\"disqus_thread\"></div>")
