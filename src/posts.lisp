@@ -4,13 +4,14 @@
   ((title  :initarg :title  :reader title-of)
    (author :initarg :author :reader author-of)
    (excerpt :initarg :excerpt :reader excerpt-of)
+   (slug    :initarg :slug    :reader    slug-of)
    (format :initarg :format :reader post-format))
   (:default-initargs :author nil :excerpt nil))
 
 (defmethod initialize-instance :after ((object post) &key)
-  (with-slots (url title author excerpt format text) object
+  (with-slots (url title author excerpt slug format text) object
     (let (post-content)
-      (setf url (compute-url object (string-downcase (slugify title)))
+      (setf url (compute-url object (string-downcase (slugify slug)))
             format (make-keyword (string-upcase format))
             post-content (render-text text format)
             excerpt (or excerpt
