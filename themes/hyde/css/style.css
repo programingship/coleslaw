@@ -6,7 +6,7 @@ a.anchor { color: black }
 .date { font-style: italic }
 .title { margin-left: 1em }
 .article-meta { margin-left: 2.2em; margin-bottom: 2.2em }
-.archive-title { font-size: 1em } .article-title { font-size: 2em }
+.archive-title { font-size: 1em } .article-title { font-size: 1.2em }
 .article-content { margin-left: 2.2em }
 .fineprint { text-align: center; font-size: .9em; margin-top: .5em }
 .tag-low { font-size: .8em; font-weight: 200 }
