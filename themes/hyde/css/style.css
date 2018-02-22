@@ -13,7 +13,7 @@ a.anchor { color: black }
 .tag-medium { font-size: 1.2em; font-weight: 600 }
 .tag-high { font-size: 1.8em; font-weight: 800 }
 .navigation { font-size: 1.2em; border-bottom: 1px solid }
-body { background-color: white; font-family: Vollkorn; font-size: 14pt }
+body { background-color: white; font-family: Vollkorn; font-size: 16px}
 pre { overflow: auto; margin-left: 1em; padding: 0.5em; border-left: 1px dashed;
       background-color: white; padding: .75em .5em; font-family: (unquote mono-font) }
 tt { font-size: .9em; font-family: (unquote mono-font) }
